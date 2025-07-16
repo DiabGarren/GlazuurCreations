@@ -1,3 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap");
 @import "tailwindcss";
 @plugin './hero.ts';
 @source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Merienda", cursive;
+}
+
+h1,
+h2 {
+    font-weight: 700;
+}
+
+body {
+    background-color: #eee;
+}
+
+header {
+    background-color: #1a855c;
+    color: #fff;
+    .logo {
+        color: #f17b99;
+        /* transform: rotate(15deg); */
+    }
+    .nav li.active {
+        background-color: #1a6649;
+    }
+    .nav li {
+        padding-inline: 10px;
+        border-inline: 1px solid #1a6649;
+        height: 100%;
+        display: flex;
+
+        a {
+            align-self: center;
+        }
+    }
+    .nav li:first-of-type {
+        border-left: none;
+    }
+    .nav li:last-of-type {
+        border-right: none;
+    }
+}
+
+footer {
+    background-color: #1a855c;
+    color: #fff;
+}

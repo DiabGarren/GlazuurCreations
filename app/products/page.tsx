@@ -4,7 +4,7 @@ import { Button } from "@heroui/react";
 
 export default function Home() {
     return (
-        <Body active={"home"}>
+        <Body active={"products"}>
             <Button>button</Button>
         </Body>
     );
