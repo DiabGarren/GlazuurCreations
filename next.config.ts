@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+    serverExternalPackages: ["mongoose", "@typegoose/typegoose"],
+    images: {
+        remotePatterns: [{ protocol: "https", hostname: "utfs.io" }],
+    },
 };
 
 export default nextConfig;
