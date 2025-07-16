@@ -1,11 +1,12 @@
 "use client";
+import Back from "@/components/back";
 import Body from "@/components/body";
-import { Button } from "@heroui/react";
 
 export default function Home() {
     return (
         <Body active={"products"}>
-            <Button>button</Button>
+            <Back callback="./" />
+            <h2 className="text-center">All Products</h2>
         </Body>
     );
 }
