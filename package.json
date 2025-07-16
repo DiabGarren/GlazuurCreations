@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroui/react": "^2.8.0-beta.15",
     "bcrypt": "^6.0.0",
+    "framer-motion": "^12.23.6",
     "heroui-cli": "^1.2.3",
     "mongoose": "^8.16.3",
     "next": "15.4.1",
