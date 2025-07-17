@@ -30,20 +30,21 @@ header {
         background-color: #1a6649;
     }
     .nav li {
-        padding-inline: 10px;
-        border-inline: 1px solid #1a6649;
+        padding-block: 5px;
+        border-block: 1px solid #1a6649;
         height: 100%;
+        width: 100%;
         display: flex;
-
+        justify-content: center;
         a {
             align-self: center;
         }
     }
     .nav li:first-of-type {
-        border-left: none;
+        border-top-width: 2px;
     }
     .nav li:last-of-type {
-        border-right: none;
+        border-bottom-width: 2px;
     }
 }
 

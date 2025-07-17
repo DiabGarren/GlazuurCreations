@@ -82,8 +82,8 @@ export default function Body({
                         />
                     </svg>
                 </button>
-                <nav className={`nav ${nav ? "block" : "hidden"} h-[30px]`}>
-                    <ul className="flex h-[100%]">
+                <nav className={`nav ${nav ? "block" : "hidden"} col-[1/4]`}>
+                    <ul className="flex-block h-[100%] w-[100%] items-center">
                         <li className={`${active == "home" ? "active" : ""}`}>
                             <Link href={"./"}>Home</Link>
                         </li>
