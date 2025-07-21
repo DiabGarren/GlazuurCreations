@@ -85,17 +85,17 @@ export default function Body({
                 <nav className={`nav ${nav ? "block" : "hidden"} col-[1/4]`}>
                     <ul className="flex-block h-[100%] w-[100%] items-center">
                         <li className={`${active == "home" ? "active" : ""}`}>
-                            <Link href={"./"}>Home</Link>
+                            <Link href={"/"}>Home</Link>
                         </li>
                         <li
                             className={`${
                                 active == "products" ? "active" : ""
                             }`}
                         >
-                            <Link href={"./products"}>Products</Link>
+                            <Link href={"/products"}>Products</Link>
                         </li>
                         <li className={`${active == "about" ? "active" : ""}`}>
-                            <Link href={"./about"}>About</Link>
+                            <Link href={"/about"}>About</Link>
                         </li>
                     </ul>
                 </nav>
