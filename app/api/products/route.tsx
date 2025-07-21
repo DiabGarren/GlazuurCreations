@@ -19,6 +19,7 @@ export async function GET() {
             status: 201,
             headers: { "Content-Type": "application/json" },
         });
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
         return createErrorResponse(error.message, 500);
     }
