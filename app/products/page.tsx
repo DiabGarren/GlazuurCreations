@@ -1,46 +1,46 @@
-/* eslint-disable react/jsx-key */
 "use client";
 import Back from "@/components/back";
 import Body from "@/components/body";
-import ProductCard from "@/components/productCard";
-import { Product } from "@/lib/product";
+import { Product as Metadata } from "@/lib/product";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-    const [products, setProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        const getProducts = async () => {
-            fetch(process.env.NEXT_PUBLIC_API_URL + "/products")
+        const getCategories = async () => {
+            fetch(process.env.NEXT_PUBLIC_API_URL + "/metadata")
                 .then((res) => res.json())
                 .then((data) => {
                     if (data.status === "success") {
-                        setProducts(data.data);
+                        setCategories(data.data[0].categories);
                     }
                 });
         };
-        getProducts();
+        getCategories();
     }, []);
 
     return (
         <Body active={"products"}>
             <Back callback="./" />
-            <h2 className="text-center text-[22px]">All Products</h2>
-            <div className="mt-[15px]">
-                {products.length > 0 ? (
-                    <div className="flex gap-[5px_10px] flex-wrap mx-auto justify-center">
-                        {products.map((product: Product) => {
+            <h2 className="text-center text-[22px]">All Categories</h2>
+            <div className="flex-col mt-[15px] mx-auto justify-center">
+                {categories.length > 0 ? (
+                    <>
+                        {categories.map((category: string, index: number) => {
                             return (
-                                <ProductCard
-                                    productId={product.productId}
-                                    productName={product.name}
-                                    productPrice={product.price}
-                                    productColours={product.colours}
-                                    productCategory={product.category}
-                                />
+                                <Link
+                                    className="block hover:bg-(--secondary) hover:text-white hover:underline text-center py-[15px] rounded-[5px] text-[18px] border-y-[1px]
+                                    border-(--secondary) first-of-type:border-t-[0px] last-of-type:border-b-[0px]"
+                                    href={"/products/category/" + category}
+                                    key={index}
+                                >
+                                    {category}
+                                </Link>
                             );
                         })}
-                    </div>
+                    </>
                 ) : (
                     <h2>No Products</h2>
                 )}

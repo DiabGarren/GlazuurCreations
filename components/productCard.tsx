@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import Image from "next/image";
 import Link from "next/link";
 
@@ -35,10 +34,14 @@ export default function ProductCard({
                 <h2>{productName}</h2>
                 <div>
                     {productColours.map(
-                        ({ name, id }: { name: string; id: string }) => {
+                        (
+                            { name, id }: { name: string; id: string },
+                            index: number
+                        ) => {
                             return (
                                 <div
                                     className={"product-card-colour-" + id}
+                                    key={index}
                                 ></div>
                             );
                         }
